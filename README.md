@@ -25,9 +25,14 @@ There is one class - ImageEditor , which contains a main function and 5 function
 
     - If there is any error in the program, it prints the exception in the terminal.
 
+- `Taking in the input to process the input` :
+
+    - Used the `System.java.io` module that helps in taking the input form user and gives output.
+
+
 # Functions
 
-    - Original Image
+    Original Image
 
 ![image](./example.jpg)
 
