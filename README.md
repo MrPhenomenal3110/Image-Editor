@@ -75,3 +75,4 @@ There is one class - ImageEditor , which contains a main function and 5 function
     - This function takes an input as an integer, that gives the increase or decrease percentage of brightness and it increases the r, g, b values of every pixel of the image, by the percentage entered as input. This leads to an increase in the effective brightness. (In order to avoid error which might occur if r,g or b values surpass their threshold value : 255, there is a check done using the if block, ensuring that no value goes above 255, and gets caped at 255).
 
     - Used `java.awt.image.BufferedImage` module to create an object of Buffered Image and process it and return the processed Buffered Image as the output.
+### ~ By __*Prem Shah*__
