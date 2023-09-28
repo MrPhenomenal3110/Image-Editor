@@ -15,7 +15,7 @@ public class ImageEditor{
             System.exit(1);
         }
         
-        String[] commands = {"mirror","to-grayscale","to-monochrome","rotate","brightness-control"};
+        String[] commands = {"mirror","to-grayscale","to-monochrome","rotate-clockwise", "rotate-anticlockwise","brightness-control"};
 
         String command = "";
 
@@ -33,7 +33,7 @@ public class ImageEditor{
 
         if(!commandExists){
             System.out.printf("%s : not a valid command !\n",args[0]);
-            System.out.println("Possible Commands : mirror , to-grayscale , to-monochrome , rotate , brightness-control");
+            System.out.println("Possible Commands : mirror , to-grayscale , to-monochrome , rotate-clockwise , rotate-anticlockwise, brightness-control");
             System.exit(1);
 
         }
@@ -64,8 +64,8 @@ public class ImageEditor{
                     ImageIO.write(convert_to_monochrome(inputImage), "jpg", outputImage);
                     break;
 
-                case "rotate":
-                    ImageIO.write(rotateImage(inputImage), "jpg", outputImage);
+                case "rotate-clockwise":
+                    ImageIO.write(rotateImageClockWise(inputImage), "jpg", outputImage);
                     break;
 
                 case "brightness-control":
@@ -73,6 +73,10 @@ public class ImageEditor{
                     int percent = sc.nextInt();
                     System.out.println("");
                     ImageIO.write(change_brightness(inputImage, percent), "jpg", outputImage);
+                    break;
+
+                case "rotate-anticlockwise":
+                    ImageIO.write(rotateImageAntiClockWise(inputImage),"jpg", outputImage);
                     break;
 
                 default:
@@ -112,7 +116,7 @@ public class ImageEditor{
 
     }
 
-    public static BufferedImage rotateImage(BufferedImage image){
+    public static BufferedImage rotateImageClockWise(BufferedImage image){
 
         int height = image.getHeight();
         int width = image.getWidth();
@@ -134,6 +138,20 @@ public class ImageEditor{
         return imgOut;
 
     }
+
+    public static BufferedImage rotateImageAntiClockWise(BufferedImage image){
+        int height = image.getHeight();
+        int width = image.getWidth();
+
+        BufferedImage outputImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+
+        outputImage = rotateImageClockWise(image);
+        outputImage = mirrorImage(outputImage);
+
+        return outputImage;
+
+    }
+
 
     public static BufferedImage convert_to_grayscale(BufferedImage image){
 

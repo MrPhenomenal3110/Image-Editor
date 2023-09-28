@@ -8,7 +8,8 @@ There is one class - ImageEditor , which contains a main function and 5 function
     - `mirror`
     - `to-grayscale`
     - `to-monochrome`
-    - `rotate`
+    - `rotate-clockwise`
+    - `rotate-anticlockwise`
     - `brightness-control`
 
 # Command-Line-Interface : 
@@ -52,11 +53,19 @@ There is one class - ImageEditor , which contains a main function and 5 function
 
     - Used `java.awt.image.BufferedImage` module to create an object of Buffered Image and process it and return the processed Buffered Image as the output.
 
-- `rotate`
+- `rotate-clockwise`
 
-    ![image](./rotate.jpg)
+    ![image](./clockwise.jpg)
 
     - It rotates the image `clockwise`. The function exchanges every row with the column i.e row becomes column and column becomes row.
+
+    - Used `java.awt.image.BufferedImage` module to create an object of Buffered Image and process it and return the processed Buffered Image as the output.
+
+- `rotate-anticlockwise`
+
+    ![image](./anti-clockwise.jpg)
+
+    - It rotates the image `anti-clockwise`. The function uses the rotate-clockwise and mirrors the image using the mirror function. 
 
     - Used `java.awt.image.BufferedImage` module to create an object of Buffered Image and process it and return the processed Buffered Image as the output.
 
